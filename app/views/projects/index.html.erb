@@ -1,0 +1,42 @@
+<h1>Listing projects</h1>
+
+<h2>Complete Projects</h2>
+<%= form_tag uncomplete_projects_path, :method => "put" do %>
+<ul>
+    <% @projects1.each do |project| %>
+      <li>
+        <%= check_box_tag "proj_ids[]", project.id %>
+        <%= project.name %>
+      </li>
+    <% end %>
+</ul> 
+<%= submit_tag "Un-complete" %>
+<% end %>
+
+<h2>Un-complete Projects</h2>
+<%= form_tag complete_projects_path, :method => "put" do %>
+<ul>
+    <% @projects2.each do |project| %>
+      <li>
+        <%= check_box_tag "proj_ids[]", project.id %>
+        <%= project.name %>
+      </li>
+    <% end %>
+</ul> 
+<%= submit_tag "Complete" %> 
+<% end %>
+
+<h2>All Projects</h2>
+<%= form_tag group_destroy_projects_path, :method => "delete" do %>
+<ul>
+    <% @projects.each do |project| %>
+      <li>
+        <%= check_box_tag "proj_ids[]", project.id %>
+        <%= project.name %>
+      </li>
+    <% end %>
+    <%= submit_tag "group delete" %> 
+</ul> 
+<% end %>
+
+<%= link_to 'New Project', new_project_path %>

@@ -1,0 +1,7 @@
+== README
+
+This program demos and tests the functionality specified in a Ryan Bates Railscast:
+
+http://railscasts.com/episodes/165-edit-multiple?autoplay=true
+
+
